@@ -11,20 +11,29 @@ class LifeCycle extends Component {
     }
     componentDidMount()
     {
-        setTimeout(()=>{
-            this.setState({
-                count:2
-            })
-        },3000)
+        // setTimeout(()=>{
+        //     this.setState({
+        //         count:2
+        //     })
+        // },3000)
     }
     shouldComponentUpdate (nextProps,nextState) {
+        if(nextState.count >= 5)
+        {
+            return false
+        }
         return true
     }
-
+    
+    changeCount = () => {
+        this.setState({
+            count : this.state.count + 1
+        })
+    }
 
     render(){
         return(
-            <button className="btn">Component Button {this.state.count}</button>
+            <button className="btn" onClick={this.changeCount}>Component Button {this.state.count}</button>
         )
     }
 }
