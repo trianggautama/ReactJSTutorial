@@ -9,8 +9,7 @@ class Product extends Component {
     }
     HandleCounterChange =(newValue) =>{
         this.setState({
-            order:
-            
+            order:newValue
         })
     }
     render()
