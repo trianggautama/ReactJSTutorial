@@ -506,12 +506,6 @@
     },
     {
       "userId": 9,
-      "id": 88,
-      "title": "sapiente omnis fugit eos",
-      "body": "consequatur omnis est praesentium\nducimus non iste\nneque hic deserunt\nvoluptatibus veniam cum et rerum sed"
-    },
-    {
-      "userId": 9,
       "id": 89,
       "title": "sint soluta et vel magnam aut ut sed qui",
       "body": "repellat aut aperiam totam temporibus autem et\narchitecto magnam ut\nconsequatur qui cupiditate rerum quia soluta dignissimos nihil iure\ntempore quas est"
@@ -583,9 +577,21 @@
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
     },
     {
-      "id": 1644586177056,
-      "title": "ini contoh dari inputan ",
-      "body": "bodynya terserah aja asal ada",
+      "id": 1644662137161,
+      "title": "ini contoh update",
+      "body": "ini isi contoh update",
+      "userId": 1
+    },
+    {
+      "id": 1644662149228,
+      "title": "ini tambah baru",
+      "body": "baru lagi coy",
+      "userId": 1
+    },
+    {
+      "id": 1,
+      "title": "",
+      "body": "",
       "userId": 1
     }
   ],
