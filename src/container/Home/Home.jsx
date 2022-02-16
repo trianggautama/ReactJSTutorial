@@ -1,8 +1,11 @@
+//module
 import React, {Component,Fragment} from "react";
-import BlogPost from "../BlogPost/BlogPost";
-// import YoutubeComponent from "../../component/YoutubeComponent/YoutubeComponent";
-import LifeCycle from "../LifeCycle/LifeCycle";
-import Product from "../Product/Product";
+//component
+import BlogPost from "../Pages/BlogPost/BlogPost";
+import LifeCycle from "../Pages/LifeCycle/LifeCycle";
+import Product from "../Pages/Product/Product";
+import Youtube from "../Pages/Youtube/Youtube";
+//style
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 import './Home.css'
@@ -35,12 +38,14 @@ class Home extends Component {
                     <Button><Link to="/" className="link-menu">Blog Post</Link> </Button>
                     <Button><Link to="/product" className="link-menu">Product</Link></Button>
                     <Button><Link to="/lifecycle" className="link-menu">Lifecycle</Link></Button>
+                    <Button><Link to="/youtube" className="link-menu">Youtube</Link></Button>
                 </ButtonGroup>
             </nav>
            <Routes>
                  <Route path="/" element={<BlogPost />}></Route>
                  <Route path="/product" element={<Product/>}></Route>
                  <Route path="/lifecycle" element={<LifeCycle/>}></Route>
+                 <Route path="/youtube" element={<Youtube/>}></Route>
             </Routes>
            </Fragment>
         </Router>
