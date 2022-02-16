@@ -80,11 +80,12 @@ class BlogPost extends Component {
         this.setState({
             formBlogPost : formBlogPostNew
         })
+        console.log(this.state.formBlogPost)
     }
 
     handleSubmit = () => {
         if(this.state.isUpdate){
-
+            this.putDataToAPI()
         }else{
             this.postDataToAPI()
         }
