@@ -66,15 +66,16 @@
 
 .update {
     padding: 12px 12px;
-    background: rgb(91, 226, 98);
+    background: rgb(243, 203, 72);
     color: white;
     border-radius: 4px;
     outline: none;
     margin-top: 18px;
+    margin-right: 5px;
 }
 .update:hover{
     cursor: pointer;
-    background:rgb(69, 187, 75)
+    background:rgb(228, 189, 60)
 }
 
 .form-add-post {

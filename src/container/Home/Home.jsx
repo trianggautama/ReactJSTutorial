@@ -3,8 +3,12 @@ import BlogPost from "../BlogPost/BlogPost";
 // import YoutubeComponent from "../../component/YoutubeComponent/YoutubeComponent";
 import LifeCycle from "../LifeCycle/LifeCycle";
 import Product from "../Product/Product";
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
+import './Home.css'
+
 import {
-    BrowserRouter,
+    BrowserRouter as Router,
     Routes,
     Route,
     Link
@@ -24,13 +28,14 @@ class Home extends Component {
 
     render(){
        return(
-        <BrowserRouter>
+        <Router>
            <Fragment>
-            <h1>Menu</h1>
             <nav>
-                <Link to="/">Home</Link> 
-                <Link to="/product">Product</Link>
-                <Link to="/lifecycle">Lifecycle</Link>
+                <ButtonGroup variant="contained" aria-label="outlined primary button group" className="button-group-menu">
+                    <Button><Link to="/" className="link-menu">Blog Post</Link> </Button>
+                    <Button><Link to="/product" className="link-menu">Product</Link></Button>
+                    <Button><Link to="/lifecycle" className="link-menu">Lifecycle</Link></Button>
+                </ButtonGroup>
             </nav>
            <Routes>
                  <Route path="/" element={<BlogPost />}></Route>
@@ -38,7 +43,7 @@ class Home extends Component {
                  <Route path="/lifecycle" element={<LifeCycle/>}></Route>
             </Routes>
            </Fragment>
-        </BrowserRouter>
+        </Router>
        )
     }
 }

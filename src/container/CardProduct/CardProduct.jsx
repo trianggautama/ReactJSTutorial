@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 
 class CardProduct extends Component {
 
@@ -39,9 +42,9 @@ class CardProduct extends Component {
                 <p className="product-title">Baju Olahraga</p>
                 <p className="product-price">Rp.300.000</p>
                 <div className="counter">
-                    <button className="minus" onClick={this.handleMinus}>-</button>
-                    <input type="text"  value={this.state.order}/>
-                    <button className="plus" onClick={this.handlePlus}>+</button>
+                    <Button variant="contained" color="info" onClick={this.handleMinus}>-</Button>
+                    <TextField    id="outlined-size-small"  defaultValue="Small" size="small" value={this.state.order}/>
+                    <Button variant="contained" color="info" onClick={this.handlePlus}>+</Button>
                 </div>
             </div>
         )
