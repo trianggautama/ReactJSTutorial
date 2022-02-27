@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { TextField } from "@mui/material";
 import {connect} from 'react-redux'
+import globalActionType from "../../../redux/reducer/globalActionType";
 
 class CardProduct extends Component {
 
@@ -76,8 +77,8 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) =>{
     return {
-        handlePlus : ()=> dispatch({type:'HANDLE_PLUS'}),
-        handleMinus : ()=> dispatch({type:'HANDLE_MINUS'})
+        handlePlus : ()=> dispatch({type:globalActionType.PLUS_ODER}),
+        handleMinus : ()=> dispatch({type:globalActionType.MINUS_ORDER})
 
     }
 }
