@@ -6,51 +6,41 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { TextField } from "@mui/material";
+import {connect} from 'react-redux'
 
 class CardProduct extends Component {
 
-    state = {
-        order: 2
-    }
+    // state = {
+    //     order: 2
+    // }
 
-    HandleCounterChange = (newValue) =>{
-        return this.props.onCounterChange(newValue)
-    }
+    // HandleCounterChange = (newValue) =>{
+    //     return this.props.onCounterChange(newValue)
+    // }
 
-    handlePlus = () => {
-        this.setState({
-            order : this.state.order + 1
-        },()=>{
-            this.HandleCounterChange(this.state.order)
-        })
-    }
+    // handlePlus = () => {
+    //     this.setState({
+    //         order : this.state.order + 1
+    //     },()=>{
+    //         this.HandleCounterChange(this.state.order)
+    //     })
+    // }
 
-    handleMinus = () => {
-       if(this.state.order > 0)
-       {
-        this.setState({
-            order : this.state.order - 1
-        },()=>{
-            this.HandleCounterChange(this.state.order)
-        })
-       }
-    }
+    // handleMinus = () => {
+    //    if(this.state.order > 0)
+    //    {
+    //     this.setState({
+    //         order : this.state.order - 1
+    //     },()=>{
+    //         this.HandleCounterChange(this.state.order)
+    //     })
+    //    }
+    // }
 
     render()
     {
+        console.log(this.props)
         return(
-            // <div className="card">
-            //     <div className="img-thumb-product">
-            //         <img src="https://ae01.alicdn.com/kf/H3f61729781ac4d2f91735edb1bd6b43ci/Baru-Bulutangkis-Kemeja-Pria-Olahraga-Kaos-Tenis-SHIRT-Pria-Tenis-Meja-Tshirt-cepat-Kering-Kebugaran-Latihan.jpg_Q90.jpg_.webp" alt="" />
-            //     </div>
-            //     <p className="product-title">Baju Olahraga</p>
-            //     <p className="product-price">Rp.300.000</p>
-            //     <div className="counter">
-            //         <Button variant="contained" color="info" onClick={this.handleMinus}>-</Button>
-            //         <TextField    id="outlined-size-small"  defaultValue="Small" size="small" value={this.state.order}/>
-            //         <Button variant="contained" color="info" onClick={this.handlePlus}>+</Button>
-            //     </div>
-            // </div>
             <Fragment>
                 <Card sx={{ maxWidth: 345 }}>
                     <CardMedia
@@ -69,14 +59,27 @@ class CardProduct extends Component {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button variant="contained" color="info" onClick={this.handleMinus}>-</Button>
-                        <TextField    id="outlined-size-small"  defaultValue="Small" size="small" value={this.state.order}/>
-                        <Button variant="contained" color="info" onClick={this.handlePlus}>+</Button>
+                        <Button variant="contained" color="info" onClick={this.props.handleMinus}>-</Button>
+                        <TextField    id="outlined-size-small"  defaultValue="Small" size="small" value={this.props.order}/>
+                        <Button variant="contained" color="info" onClick={this.props.handlePlus}>+</Button>
                     </CardActions>
                 </Card>
             </Fragment>
         )
     }
 }
+const mapStateToProps = (state) =>{
+    return {
+        order : state.totalOrder,
+    }
+}
 
-export default CardProduct
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        handlePlus : ()=> dispatch({type:'HANDLE_PLUS'}),
+        handleMinus : ()=> dispatch({type:'HANDLE_MINUS'})
+
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(CardProduct)

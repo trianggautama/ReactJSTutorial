@@ -4,10 +4,46 @@ import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './container/Home/Home';
+import {createStore} from 'redux'
+import { Provider } from 'react-redux';
 
+//default state global
+const globalState = {
+  'totalOrder' : 0
+}
+//reducer Redux
+const rootReducer = (state = globalState, action) =>{
+  switch(action.type)
+  {
+    case 'HANDLE_PLUS':
+      return{
+        ...state,
+        'totalOrder': state.totalOrder + 1
+      }
+    case 'HANDLE_MINUS':
+      let totalOrder = 0
+      if(state.totalOrder > 0)
+      {
+        return{
+          ...state,
+          'totalOrder': state.totalOrder - 1
+        }
+      }
+
+      return{
+        ...state,
+        'totalOrder': totalOrder
+      }
+      
+    default : return state
+
+  }
+} 
+//store Redux 
+const storeRedux = createStore(rootReducer)
 
 ReactDOM.render(
- <Home/>,
+ <Provider store={storeRedux} ><Home/></Provider>,
   document.getElementById('root')
 );
 

@@ -5,10 +5,14 @@ import BlogPost from "../Pages/BlogPost/BlogPost";
 import LifeCycle from "../Pages/LifeCycle/LifeCycle";
 import Product from "../Pages/Product/Product";
 import Youtube from "../Pages/Youtube/Youtube";
+
 //style
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
 import './Home.css'
+
 
 import {
     BrowserRouter as Router,
@@ -33,6 +37,8 @@ class Home extends Component {
        return(
         <Router>
            <Fragment>
+           <CssBaseline />
+            <Container fixed>
             <nav>
                 <ButtonGroup variant="contained" aria-label="outlined primary button group" className="button-group-menu">
                     <Button><Link to="/" className="link-menu">Blog Post</Link> </Button>
@@ -47,6 +53,7 @@ class Home extends Component {
                  <Route path="/lifecycle" element={<LifeCycle/>}></Route>
                  <Route path="/youtube" element={<Youtube/>}></Route>
             </Routes>
+            </Container>
            </Fragment>
         </Router>
        )
